@@ -19,15 +19,15 @@ namespace Digi1Back.Controllers
         }
 
         [HttpGet("[action]")]
-        public IEnumerable<ClienteViewModel> Inven()
+        public IEnumerable<ClienteViewModel> Clien()
         {
             List<ClienteViewModel> lst = (from d in db.view_compras
-                                             where d.cantidad < 5
+                                            where d.edad < 35
                                              select new ClienteViewModel
                                              {
-                                                 Id = d.id,
                                                  nombre = d.nombre,
-                                                 cantidad = d.cantidad,
+                                                 edad = d.edad,
+                                                 fecha_compra = d.fecha_compra
                                              }).ToList();
 
             return lst;
