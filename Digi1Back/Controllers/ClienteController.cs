@@ -25,6 +25,7 @@ namespace Digi1Back.Controllers
                                             where d.edad < 35
                                              select new ClienteViewModel
                                              {
+                                                 fac_id = d.fac_id,
                                                  nombre = d.nombre,
                                                  edad = d.edad,
                                                  fecha_compra = d.fecha_compra

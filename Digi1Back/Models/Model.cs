@@ -23,6 +23,8 @@ namespace Digi1Back.Models
 
         public DbSet<view_compras> view_compras { get; set; }
 
+        public DbSet<view_vendido> view_vendido { get; set; }
+
     }
 
     public class view_inventarios 
@@ -32,11 +34,21 @@ namespace Digi1Back.Models
         public int cantidad { get; set; }
     }
 
+    public class view_vendido
+    {
+        [Key]
+        public int fac_pro_id { get; set; }
+        public string pro_nombre { get; set; }
+        public int cantidad { get; set; }
+        public int total { get; set; }
+    }
+
     public class view_compras
     {
         public string nombre { get; set; }
         public DateTime fecha_naci { get; set; }
         public int edad { get; set; }
+        [Key]
         public int fac_id { get; set; }
 
         public DateTime fecha_compra { get; set; }
